@@ -11,6 +11,7 @@ const required = [
   'Pilot',
   'In Development',
   'dhanar.santika@gmail.com',
+  'https://github.com/DhanarSantika',
   'www.blueglasses.xyz',
 ];
 for (const value of required) assert.ok(content.includes(value), `Missing required public content: ${value}`);
@@ -44,8 +45,12 @@ if (process.argv.includes('--dist')) {
   assert.ok(builtFiles.includes(join(dist, 'index.html')), 'English homepage missing from build');
   assert.ok(builtFiles.includes(join(dist, 'id/index.html')), 'Indonesian homepage missing from build');
   const englishHtml = await readFile(join(dist, 'index.html'), 'utf8');
+  const indonesianHtml = await readFile(join(dist, 'id/index.html'), 'utf8');
   assert.ok(englishHtml.includes('/logo-dark.svg') && englishHtml.includes('/logo-light.svg'), 'Theme logos missing from homepage');
   assert.ok(englishHtml.includes('/photoprofile.jpg'), 'Profile photo missing from homepage');
+  assert.ok(englishHtml.includes('validating real-world workflows, usability, and operational requirements'), 'English SIKAP pilot note missing');
+  assert.ok(indonesianHtml.includes('memvalidasi alur kerja nyata, kemudahan penggunaan, dan kebutuhan operasional'), 'Indonesian SIKAP pilot note missing');
+  assert.ok(englishHtml.includes('https://github.com/DhanarSantika') && indonesianHtml.includes('https://github.com/DhanarSantika'), 'GitHub contact link missing from a locale');
   assert.ok(englishHtml.includes('id="site-favicon"'), 'Dynamic favicon link missing from homepage');
   for (const asset of ['logo-dark.svg', 'logo-light.svg', 'favicon-dark.svg', 'favicon-light.svg', 'photoprofile.jpg']) {
     assert.ok(builtFiles.includes(join(dist, asset)), `Theme logo asset missing from build: ${asset}`);

@@ -86,6 +86,7 @@ const alternatePath = locale === 'en' ? '/id/' : '/';
             <h3 id="sikap-title">SIKAP<span class="project-period">/ 01</span></h3>
             <p class="project-subtitle">{t.sikapSubtitle}</p>
             <p class="project-description">{t.sikapDescription}</p>
+            <p class="sikap-pilot-note">{t.sikapPilotNote}</p>
             <ul class="feature-list">{t.sikapFeatures.map((feature) => <li>{feature}</li>)}</ul>
             <div class="tag-list">{t.sikapTags.map((tag) => <span>{tag}</span>)}</div>
           </div>
@@ -118,7 +119,7 @@ const alternatePath = locale === 'en' ? '/id/' : '/';
   <section class="contact-section" id="contact" aria-labelledby="contact-title">
     <div class="section-wrap contact-inner">
       <div><p class="eyebrow">04 / {t.contactEyebrow}</p><h2 id="contact-title">{t.contactTitle}</h2><p class="contact-body">{t.contactBody}</p></div>
-      <div class="contact-actions"><a class="contact-email" href={`mailto:${site.email}`}>{site.email}<span aria-hidden="true">↗</span></a><a class="inline-link" href={site.linkedin} target="_blank" rel="noopener noreferrer">{t.linkedinCta}<span aria-hidden="true">↗</span></a></div>
+      <div class="contact-actions"><a class="contact-email" href={`mailto:${site.email}`}>{site.email}<span aria-hidden="true">↗</span></a><a class="inline-link" href={site.linkedin} target="_blank" rel="noopener noreferrer">{t.linkedinCta}<span aria-hidden="true">↗</span></a><a class="inline-link" href={site.github} target="_blank" rel="noopener noreferrer">{t.githubCta}<span aria-hidden="true">↗</span></a></div>
     </div>
   </section>
 </main>

@@ -5,6 +5,7 @@ export const site = {
   role: 'Software Engineer',
   email: 'dhanar.santika@gmail.com',
   linkedin: 'https://www.linkedin.com/in/dhanarsantika/',
+  github: 'https://github.com/DhanarSantika',
   domain: 'https://www.blueglasses.xyz',
 };
 
@@ -63,7 +64,9 @@ export const copy = {
     sikapStatus: 'Pilot',
     sikapRole: 'Sole Developer · End-to-End',
     sikapDescription:
-      'SIKAP brings project cash flow, invoice tracking, receivables, payables, and company-wide reporting into one focused workspace for smaller project-based businesses. I built the application independently using Angular, .NET, and PostgreSQL. It is currently being piloted by a client in industrial machinery manufacturing.',
+      'SIKAP brings project cash flow, invoice tracking, receivables, payables, and company-wide reporting into one focused workspace for smaller project-based businesses. I built the application independently using Angular, .NET, and PostgreSQL.',
+    sikapPilotNote:
+      'SIKAP is currently in its pilot phase, with a focus on validating real-world workflows, usability, and operational requirements before broader adoption.',
     sikapFeatures: [
       'Project cash flow and ongoing contract overview',
       'Invoice status, receivables, payables, and audit history',
@@ -87,6 +90,7 @@ export const copy = {
       'For engineering conversations, collaboration, or just to say hello, email is a good place to start.',
     emailCta: 'Email me',
     linkedinCta: 'Connect on LinkedIn',
+    githubCta: 'View GitHub profile',
     footerNote: 'Designed and built with care.',
     copyright: 'All rights reserved.',
     themeDark: 'Dark theme',
@@ -146,7 +150,9 @@ export const copy = {
     sikapStatus: 'Tahap Pilot',
     sikapRole: 'Dikembangkan Mandiri · End-to-End',
     sikapDescription:
-      'SIKAP membantu perusahaan kecil berbasis proyek memantau arus kas, invoice, piutang, utang, dan laporan keuangan lintas proyek dalam satu aplikasi. Saya membangunnya secara mandiri menggunakan Angular, .NET, dan PostgreSQL. Saat ini SIKAP sedang digunakan dalam tahap pilot oleh klien di bidang manufaktur mesin industri.',
+      'SIKAP membantu perusahaan kecil berbasis proyek memantau arus kas, invoice, piutang, utang, dan laporan keuangan lintas proyek dalam satu aplikasi. Saya membangunnya secara mandiri menggunakan Angular, .NET, dan PostgreSQL.',
+    sikapPilotNote:
+      'SIKAP saat ini berada pada tahap pilot, dengan fokus memvalidasi alur kerja nyata, kemudahan penggunaan, dan kebutuhan operasional sebelum adopsi yang lebih luas.',
     sikapFeatures: [
       'Arus kas proyek dan ringkasan kontrak berjalan',
       'Status invoice, piutang, utang, dan riwayat audit',
@@ -170,6 +176,7 @@ export const copy = {
       'Untuk berbincang tentang engineering, kolaborasi, atau sekadar menyapa, Anda bisa mengirim email.',
     emailCta: 'Kirim email',
     linkedinCta: 'Terhubung di LinkedIn',
+    githubCta: 'Lihat profil GitHub',
     footerNote: 'Dirancang dan dibangun dengan sepenuh perhatian.',
     copyright: 'Hak cipta dilindungi.',
     themeDark: 'Tema gelap',
