@@ -1,0 +1,130 @@
+---
+import { copy, site, type Locale } from '../content/site';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const t = copy[locale];
+const alternatePath = locale === 'en' ? '/id/' : '/';
+---
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="wordmark" href="#top" aria-label="Dhanar Santika, home">
+      <span class="wordmark-mark" aria-hidden="true">b.</span>
+      <span>Dhanar Santika</span>
+    </a>
+    <nav class="desktop-nav" aria-label={locale === 'en' ? 'Main navigation' : 'Navigasi utama'}>
+      {t.nav.map((item) => <a href={`#${item.id}`}>{item.label}</a>)}
+    </nav>
+    <div class="header-actions">
+      <a class="locale-link" href={alternatePath} data-locale-link aria-label={t.language}>
+        {locale === 'en' ? 'ID' : 'EN'}
+      </a>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label={t.theme}>
+        <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+        <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.4A8.6 8.6 0 0 1 8.6 3.8 8.7 8.7 0 1 0 20.2 15.4Z"/></svg>
+      </button>
+      <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-nav" aria-label={locale === 'en' ? 'Open navigation' : 'Buka navigasi'}>
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobile-nav" data-mobile-nav hidden aria-label={locale === 'en' ? 'Main navigation' : 'Navigasi utama'}>
+    {t.nav.map((item) => <a href={`#${item.id}`}>{item.label}<span aria-hidden="true">↗</span></a>)}
+    <a class="mobile-language" href={alternatePath} data-locale-link>{locale === 'en' ? 'Bahasa Indonesia' : 'English'}<span aria-hidden="true">↗</span></a>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="hero section-wrap" id="top" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="hero-dot"></span>{t.heroEyebrow}</p>
+      <h1 id="hero-title">Dhanar<br /><span>Santika.</span></h1>
+      <p class="hero-lead">{t.heroLead}</p>
+      <p class="hero-body">{t.heroBody}</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="#projects">{t.projectsCta}<span aria-hidden="true">↘</span></a>
+        <a class="button button-quiet" href="#contact">{t.contactCta}<span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <div class="hero-aside" aria-hidden="true">
+      <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
+      <div class="hero-monogram">b<span>.</span></div>
+      <div class="hero-caption">SOFTWARE<br />WITH INTENTION</div>
+    </div>
+    <a class="scroll-cue" href="#expertise"><span></span>{locale === 'en' ? 'Scroll to explore' : 'Gulir untuk menjelajah'}</a>
+  </section>
+
+  <section class="section-wrap expertise-section" id="expertise" aria-labelledby="expertise-title">
+    <div class="section-heading">
+      <div><p class="eyebrow">01 / {t.expertiseEyebrow}</p><h2 id="expertise-title">{t.expertiseTitle}</h2></div>
+      <p class="section-intro">{t.expertiseIntro}</p>
+    </div>
+    <div class="expertise-grid">
+      {t.expertise.map((item) => (
+        <article class="expertise-item">
+          <span class="item-number">{item.number}</span>
+          <h3>{item.title}</h3>
+          <p>{item.body}</p>
+          <span class="tool-line">{item.tools}</span>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="projects-section" id="projects" aria-labelledby="projects-title">
+    <div class="section-wrap">
+      <div class="section-heading projects-heading">
+        <div><p class="eyebrow">02 / {t.projectsEyebrow}</p><h2 id="projects-title">{t.projectsTitle}</h2></div>
+        <p class="section-intro">{t.projectsIntro}</p>
+      </div>
+      <article class="project-card project-featured" aria-labelledby="sikap-title">
+        <div class="project-topline"><span class="project-index">01</span><span class="status-pill"><span></span>{t.sikapStatus}</span></div>
+        <div class="project-main">
+          <div class="project-copy">
+            <p class="project-role">{t.sikapRole}</p>
+            <h3 id="sikap-title">SIKAP<span class="project-period">/ 01</span></h3>
+            <p class="project-subtitle">{t.sikapSubtitle}</p>
+            <p class="project-description">{t.sikapDescription}</p>
+            <ul class="feature-list">{t.sikapFeatures.map((feature) => <li>{feature}</li>)}</ul>
+            <div class="tag-list">{t.sikapTags.map((tag) => <span>{tag}</span>)}</div>
+          </div>
+          <div class="project-visual sikap-visual" aria-hidden="true">
+            <span class="visual-kicker">A clearer view of</span>
+            <span class="visual-title">project<br />finances<span>.</span></span>
+            <div class="visual-topics"><span>01 <b>Cash flow</b></span><span>02 <b>Invoices</b></span><span>03 <b>Reporting</b></span></div>
+            <span class="visual-caption">SIKAP / PILOT</span>
+          </div>
+        </div>
+        <div class="project-bottom"><span>ANGULAR <b>·</b> .NET <b>·</b> POSTGRESQL</span></div>
+      </article>
+      <article class="project-card project-secondary" aria-labelledby="sikare-title">
+        <div class="project-topline"><span class="project-index">02</span><span class="status-pill status-progress"><span></span>{t.sikareStatus}</span></div>
+        <div class="sikare-content">
+          <div><p class="project-role">{t.sikareRole}</p><h3 id="sikare-title">SIKARE<span class="project-period">/ 02</span></h3><p class="project-subtitle">{t.sikareSubtitle}</p></div>
+          <div><p class="project-description">{t.sikareDescription}</p><div class="tag-list">{t.sikareFeatures.map((feature) => <span>{feature}</span>)}</div></div>
+        </div>
+        <div class="project-bottom"><span>PRODUCT IN DEVELOPMENT</span><span class="text-link muted-link">{locale === 'en' ? 'Built with a domain partner' : 'Dikembangkan bersama mitra domain'}</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="about-section section-wrap" id="about" aria-labelledby="about-title">
+    <div class="about-index"><span>03 / {t.aboutEyebrow}</span><span class="about-rule"></span></div>
+    <div class="about-copy"><h2 id="about-title">{t.aboutTitle}</h2><p>{t.aboutBody}</p><a class="inline-link" href={site.linkedin} target="_blank" rel="noopener noreferrer">{t.linkedinCta}<span aria-hidden="true">↗</span></a></div>
+    <div class="about-mark" aria-hidden="true">“</div>
+  </section>
+
+  <section class="contact-section" id="contact" aria-labelledby="contact-title">
+    <div class="section-wrap contact-inner">
+      <div><p class="eyebrow">04 / {t.contactEyebrow}</p><h2 id="contact-title">{t.contactTitle}</h2><p class="contact-body">{t.contactBody}</p></div>
+      <div class="contact-actions"><a class="contact-email" href={`mailto:${site.email}`}>{site.email}<span aria-hidden="true">↗</span></a><a class="inline-link" href={site.linkedin} target="_blank" rel="noopener noreferrer">{t.linkedinCta}<span aria-hidden="true">↗</span></a></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer section-wrap">
+  <a class="wordmark footer-wordmark" href="#top"><span class="wordmark-mark" aria-hidden="true">b.</span><span>Blueglasses</span></a>
+  <p>{t.footerNote}</p>
+  <span>© {new Date().getFullYear()} {site.name}. {t.copyright}</span>
+</footer>

@@ -1,0 +1,22 @@
+{
+  "name": "swa-blueglasses",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "preview": "astro preview",
+    "build": "astro build",
+    "check": "astro check",
+    "test:content": "node scripts/check-content.mjs",
+    "test:dist": "node scripts/check-content.mjs --dist",
+    "test": "npm run check && npm run test:content && npm run build && npm run test:dist"
+  },
+  "dependencies": {
+    "astro": "^7.3.8"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "typescript": "^5.9.2"
+  }
+}

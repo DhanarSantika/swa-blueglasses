@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#101216"/>
+  <circle cx="1000" cy="100" r="330" fill="none" stroke="#2a2f38" stroke-width="2"/>
+  <circle cx="1000" cy="100" r="250" fill="none" stroke="#2a2f38" stroke-width="2" stroke-dasharray="8 12"/>
+  <rect x="72" y="74" width="56" height="56" rx="16" fill="#171a20" stroke="#2a2f38"/>
+  <text x="88" y="112" fill="#82b4ff" font-family="Arial,sans-serif" font-size="30" font-weight="700">b.</text>
+  <text x="72" y="273" fill="#f0f2f5" font-family="Arial,sans-serif" font-size="88" font-weight="700" letter-spacing="-5">Dhanar Santika</text>
+  <text x="78" y="345" fill="#82b4ff" font-family="Arial,sans-serif" font-size="32" font-weight="600">Software Engineer</text>
+  <path d="M76 405h72" stroke="#82b4ff" stroke-width="3"/>
+  <text x="76" y="460" fill="#a0a6b2" font-family="Arial,sans-serif" font-size="23">Backend systems · Enterprise integration · Practical products</text>
+  <text x="76" y="565" fill="#727987" font-family="Arial,sans-serif" font-size="18" letter-spacing="3">BLUEGLASSES.XYZ</text>
+</svg>

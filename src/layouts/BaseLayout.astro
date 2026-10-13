@@ -1,0 +1,59 @@
+---
+import '../styles/global.css';
+import { copy, site, type Locale } from '../content/site';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = copy[locale];
+const currentPath = locale === 'id' ? '/id/' : '/';
+const pageUrl = `${site.domain}${currentPath}`;
+---
+
+<!doctype html>
+<html lang={t.lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#101216" />
+    <meta name="description" content={t.description} />
+    <meta name="author" content={site.name} />
+    <meta name="color-scheme" content="dark light" />
+    <title>{t.title}</title>
+    <link rel="canonical" href={pageUrl} />
+    <link rel="alternate" hreflang="en" href={`${site.domain}/`} />
+    <link rel="alternate" hreflang="id" href={`${site.domain}/id/`} />
+    <link rel="alternate" hreflang="x-default" href={`${site.domain}/`} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Blueglasses" />
+    <meta property="og:title" content={t.title} />
+    <meta property="og:description" content={t.description} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:locale" content={locale === 'id' ? 'id_ID' : 'en_US'} />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:image" content={`${site.domain}/og-image.png`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Blueglasses — Dhanar Santika, Software Engineer" />
+    <script is:inline src="/theme-init.js"></script>
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Person',
+      name: site.name,
+      jobTitle: site.role,
+      url: site.domain,
+      email: `mailto:${site.email}`,
+      sameAs: [site.linkedin],
+    })} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{t.skip}</a>
+    <slot />
+    <script>
+      import '../scripts/site.ts';
+    </script>
+  </body>
+</html>
