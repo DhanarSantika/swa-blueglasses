@@ -35,5 +35,5 @@ Azure then redirects requests for the apex and generated Azure hostname to `www`
 
 - English content is served at `/`; Bahasa Indonesia is served at `/id/`.
 - Keep internal notes outside this repository; publish only approved text and assets.
-- SIKAP demo and screenshot remain unpublished until their safety gates pass.
+- The public SIKAP preview at `https://demo-app.blueglasses.xyz/sikap` uses dummy data.
 - Never add internal SIKARE material, client data, secrets, or unpublished project assets to this repository.

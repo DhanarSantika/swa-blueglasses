@@ -6,6 +6,7 @@ export const site = {
   email: 'dhanar.santika@gmail.com',
   linkedin: 'https://www.linkedin.com/in/dhanarsantika/',
   github: 'https://github.com/DhanarSantika',
+  sikapDemo: 'https://demo-app.blueglasses.xyz/sikap',
   domain: 'https://www.blueglasses.xyz',
 };
 
@@ -36,6 +37,15 @@ export const copy = {
     expertiseTitle: 'Engineering for the parts that matter.',
     expertiseIntro:
       'I enjoy making complex systems understandable, dependable, and easier to evolve.',
+    beyondBackendLabel: 'Beyond backend',
+    beyondBackendTitle: 'Backend-focused. End-to-end capable.',
+    beyondBackendBody:
+      'Backend engineering is where I go deepest. I also work hands-on across frontend development, cloud infrastructure, and delivery pipelines to bring software from design to production.',
+    certificationsLabel: 'Microsoft certifications',
+    certifications: [
+      'Microsoft Certified: Azure Administrator Associate — AZ-104',
+      'Microsoft Certified: DevOps Engineer Expert — AZ-400',
+    ],
     expertise: [
       {
         number: '01',
@@ -72,8 +82,7 @@ export const copy = {
       'Invoice status, receivables, payables, and audit history',
       'Consolidated reporting across projects and Excel exports',
     ],
-    sikapTags: ['Project finance', 'Invoice tracking', 'Financial reporting'],
-    sikapDemo: 'View demo',
+    sikapDemoCta: 'Preview demo',
     sikareSubtitle: 'Point of Sale & F&B Operations Platform',
     sikareStatus: 'In Development',
     sikareRole: 'Solution Architect & Developer',
@@ -122,6 +131,15 @@ export const copy = {
     expertiseTitle: 'Membangun bagian sistem yang paling berarti.',
     expertiseIntro:
       'Saya senang membuat sistem kompleks lebih mudah dipahami, diandalkan, dan dikembangkan.',
+    beyondBackendLabel: 'Di luar backend',
+    beyondBackendTitle: 'Fokus pada backend, mampu menangani proses end-to-end.',
+    beyondBackendBody:
+      'Backend adalah bidang yang paling saya dalami. Saya juga terlibat langsung dalam pengembangan frontend, infrastruktur cloud, dan pipeline delivery untuk membawa perangkat lunak dari perancangan hingga produksi.',
+    certificationsLabel: 'Sertifikasi Microsoft',
+    certifications: [
+      'Microsoft Certified: Azure Administrator Associate — AZ-104',
+      'Microsoft Certified: DevOps Engineer Expert — AZ-400',
+    ],
     expertise: [
       {
         number: '01',
@@ -158,8 +176,7 @@ export const copy = {
       'Status invoice, piutang, utang, dan riwayat audit',
       'Laporan lintas proyek dan ekspor Excel',
     ],
-    sikapTags: ['Keuangan proyek', 'Pelacakan invoice', 'Laporan keuangan'],
-    sikapDemo: 'Lihat demo',
+    sikapDemoCta: 'Lihat demo',
     sikareSubtitle: 'Platform POS & Operasional Restoran',
     sikareStatus: 'Dalam Pengembangan',
     sikareRole: 'Arsitek Solusi & Pengembang',

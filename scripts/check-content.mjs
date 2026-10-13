@@ -12,6 +12,7 @@ const required = [
   'In Development',
   'dhanar.santika@gmail.com',
   'https://github.com/DhanarSantika',
+  'https://demo-app.blueglasses.xyz/sikap',
   'www.blueglasses.xyz',
 ];
 for (const value of required) assert.ok(content.includes(value), `Missing required public content: ${value}`);
@@ -51,6 +52,11 @@ if (process.argv.includes('--dist')) {
   assert.ok(englishHtml.includes('validating real-world workflows, usability, and operational requirements'), 'English SIKAP pilot note missing');
   assert.ok(indonesianHtml.includes('memvalidasi alur kerja nyata, kemudahan penggunaan, dan kebutuhan operasional'), 'Indonesian SIKAP pilot note missing');
   assert.ok(englishHtml.includes('https://github.com/DhanarSantika') && indonesianHtml.includes('https://github.com/DhanarSantika'), 'GitHub contact link missing from a locale');
+  assert.ok(englishHtml.includes('Microsoft Certified: Azure Administrator Associate') && englishHtml.includes('AZ-104'), 'AZ-104 certification missing');
+  assert.ok(englishHtml.includes('Microsoft Certified: DevOps Engineer Expert') && englishHtml.includes('AZ-400'), 'AZ-400 certification missing');
+  for (const html of [englishHtml, indonesianHtml]) {
+    assert.ok(html.includes('href="https://demo-app.blueglasses.xyz/sikap"') && html.includes('target="_blank"') && html.includes('rel="noopener noreferrer"'), 'Secure SIKAP preview link missing');
+  }
   assert.ok(englishHtml.includes('id="site-favicon"'), 'Dynamic favicon link missing from homepage');
   for (const asset of ['logo-dark.svg', 'logo-light.svg', 'favicon-dark.svg', 'favicon-light.svg', 'photoprofile.jpg']) {
     assert.ok(builtFiles.includes(join(dist, asset)), `Theme logo asset missing from build: ${asset}`);

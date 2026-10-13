@@ -70,6 +70,19 @@ const alternatePath = locale === 'en' ? '/id/' : '/';
         </article>
       ))}
     </div>
+    <div class="expertise-followup">
+      <div class="expertise-beyond">
+        <p class="eyebrow">{t.beyondBackendLabel}</p>
+        <div>
+          <h3>{t.beyondBackendTitle}</h3>
+          <p>{t.beyondBackendBody}</p>
+        </div>
+      </div>
+      <div class="expertise-certifications">
+        <p class="eyebrow">{t.certificationsLabel}</p>
+        <ul>{t.certifications.map((certification) => <li>{certification}</li>)}</ul>
+      </div>
+    </div>
   </section>
 
   <section class="projects-section" id="projects" aria-labelledby="projects-title">
@@ -88,7 +101,7 @@ const alternatePath = locale === 'en' ? '/id/' : '/';
             <p class="project-description">{t.sikapDescription}</p>
             <p class="sikap-pilot-note">{t.sikapPilotNote}</p>
             <ul class="feature-list">{t.sikapFeatures.map((feature) => <li>{feature}</li>)}</ul>
-            <div class="tag-list">{t.sikapTags.map((tag) => <span>{tag}</span>)}</div>
+            <a class="button button-quiet sikap-demo-link" href={site.sikapDemo} target="_blank" rel="noopener noreferrer">{t.sikapDemoCta}<span aria-hidden="true">↗</span></a>
           </div>
           <div class="project-visual sikap-visual" aria-hidden="true">
             <span class="visual-kicker">A clearer view of</span>
