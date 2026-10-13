@@ -52,8 +52,6 @@ const pageUrl = `${site.domain}${currentPath}`;
   <body>
     <a class="skip-link" href="#main">{t.skip}</a>
     <slot />
-    <script>
-      import '../scripts/site.ts';
-    </script>
+    <script is:inline src="/site.js"></script>
   </body>
 </html>
