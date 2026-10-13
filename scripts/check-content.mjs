@@ -29,7 +29,7 @@ async function filesUnder(path) {
 
 const publicFiles = await filesUnder(fileURLToPath(new URL('../public/', import.meta.url)));
 assert.ok(!publicFiles.some((path) => /PRD|sikare|posyandu/i.test(path)), 'Internal project material must not be in public assets');
-for (const asset of ['logo-dark.svg', 'logo-light.svg', 'favicon-dark.svg', 'favicon-light.svg']) {
+for (const asset of ['logo-dark.svg', 'logo-light.svg', 'favicon-dark.svg', 'favicon-light.svg', 'photoprofile.jpg']) {
   assert.ok(publicFiles.includes(fileURLToPath(new URL(`../public/${asset}`, import.meta.url))), `Missing theme logo asset: ${asset}`);
 }
 
@@ -45,8 +45,9 @@ if (process.argv.includes('--dist')) {
   assert.ok(builtFiles.includes(join(dist, 'id/index.html')), 'Indonesian homepage missing from build');
   const englishHtml = await readFile(join(dist, 'index.html'), 'utf8');
   assert.ok(englishHtml.includes('/logo-dark.svg') && englishHtml.includes('/logo-light.svg'), 'Theme logos missing from homepage');
+  assert.ok(englishHtml.includes('/photoprofile.jpg'), 'Profile photo missing from homepage');
   assert.ok(englishHtml.includes('id="site-favicon"'), 'Dynamic favicon link missing from homepage');
-  for (const asset of ['logo-dark.svg', 'logo-light.svg', 'favicon-dark.svg', 'favicon-light.svg']) {
+  for (const asset of ['logo-dark.svg', 'logo-light.svg', 'favicon-dark.svg', 'favicon-light.svg', 'photoprofile.jpg']) {
     assert.ok(builtFiles.includes(join(dist, asset)), `Theme logo asset missing from build: ${asset}`);
   }
 }

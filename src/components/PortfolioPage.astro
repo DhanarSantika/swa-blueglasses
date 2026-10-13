@@ -48,10 +48,9 @@ const alternatePath = locale === 'en' ? '/id/' : '/';
         <a class="button button-quiet" href="#contact">{t.contactCta}<span aria-hidden="true">↗</span></a>
       </div>
     </div>
-    <div class="hero-aside" aria-hidden="true">
-      <div class="hero-orbit orbit-one"></div>
-      <BrandMark variant="hero" />
-      <div class="hero-caption">SOFTWARE<br />WITH INTENTION</div>
+    <div class="hero-aside">
+      <div class="hero-orbit orbit-one"><img class="profile-photo" src="/photoprofile.jpg" alt="Dhanar Santika" fetchpriority="high" /></div>
+      <div class="hero-caption" aria-hidden="true">SOFTWARE<br />WITH INTENTION</div>
     </div>
     <a class="scroll-cue" href="#expertise"><span></span>{locale === 'en' ? 'Scroll to explore' : 'Gulir untuk menjelajah'}</a>
   </section>
@@ -125,7 +124,7 @@ const alternatePath = locale === 'en' ? '/id/' : '/';
 </main>
 
 <footer class="site-footer section-wrap">
-  <a class="wordmark footer-wordmark" href="#top"><BrandMark /><span>Blueglasses</span></a>
+  <a class="wordmark footer-wordmark" href="#top"><BrandMark /><span>Dhanar Santika</span></a>
   <p>{t.footerNote}</p>
   <span>© {new Date().getFullYear()} {site.name}. {t.copyright}</span>
 </footer>
