@@ -1,5 +1,6 @@
 ---
 import { copy, site, type Locale } from '../content/site';
+import BrandMark from './BrandMark.astro';
 
 interface Props { locale: Locale }
 const { locale } = Astro.props;
@@ -10,7 +11,7 @@ const alternatePath = locale === 'en' ? '/id/' : '/';
 <header class="site-header">
   <div class="header-inner">
     <a class="wordmark" href="#top" aria-label="Dhanar Santika, home">
-      <span class="wordmark-mark" aria-hidden="true">b.</span>
+      <BrandMark />
       <span>Dhanar Santika</span>
     </a>
     <nav class="desktop-nav" aria-label={locale === 'en' ? 'Main navigation' : 'Navigasi utama'}>
@@ -48,8 +49,8 @@ const alternatePath = locale === 'en' ? '/id/' : '/';
       </div>
     </div>
     <div class="hero-aside" aria-hidden="true">
-      <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
-      <div class="hero-monogram">b<span>.</span></div>
+      <div class="hero-orbit orbit-one"></div>
+      <BrandMark variant="hero" />
       <div class="hero-caption">SOFTWARE<br />WITH INTENTION</div>
     </div>
     <a class="scroll-cue" href="#expertise"><span></span>{locale === 'en' ? 'Scroll to explore' : 'Gulir untuk menjelajah'}</a>
@@ -124,7 +125,7 @@ const alternatePath = locale === 'en' ? '/id/' : '/';
 </main>
 
 <footer class="site-footer section-wrap">
-  <a class="wordmark footer-wordmark" href="#top"><span class="wordmark-mark" aria-hidden="true">b.</span><span>Blueglasses</span></a>
+  <a class="wordmark footer-wordmark" href="#top"><BrandMark /><span>Blueglasses</span></a>
   <p>{t.footerNote}</p>
   <span>© {new Date().getFullYear()} {site.name}. {t.copyright}</span>
 </footer>

@@ -23,6 +23,8 @@
 
   function applyTheme(theme) {
     document.documentElement.dataset.theme = theme;
+    const favicon = document.getElementById('site-favicon');
+    if (favicon) favicon.href = `/favicon-${theme}.svg`;
     themeToggle?.setAttribute('aria-pressed', String(theme === 'light'));
     const language = document.documentElement.lang;
     themeToggle?.setAttribute(
