@@ -2,6 +2,7 @@
   const themeToggle = document.querySelector('[data-theme-toggle]');
   const menuToggle = document.querySelector('[data-menu-toggle]');
   const mobileNav = document.querySelector('[data-mobile-nav]');
+  let themeTransitionTimer;
 
   document.querySelectorAll('[data-locale-link]').forEach((localeLink) => {
     localeLink.addEventListener('click', (event) => {
@@ -36,6 +37,11 @@
 
   themeToggle?.addEventListener('click', () => {
     const next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+    document.documentElement.dataset.themeTransition = 'on';
+    window.clearTimeout(themeTransitionTimer);
+    themeTransitionTimer = window.setTimeout(() => {
+      delete document.documentElement.dataset.themeTransition;
+    }, 320);
     applyTheme(next);
     try {
       localStorage.setItem('blueglasses-theme', next);
